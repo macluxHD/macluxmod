@@ -39,7 +39,8 @@ public abstract class BlockPlacedMixin {
             CallbackInfo info) {
         // Logger LOGGER = LoggerFactory.getLogger("BlockPlacedMixin");
 
-        if (!(placer instanceof PlayerEntity) || !maclux.restockerEnabled || itemStack.getCount() != 1) {
+        if (!(placer instanceof PlayerEntity) || !maclux.restockerEnabled || itemStack.getCount() != 1
+                || ((PlayerEntity) placer).getAbilities().creativeMode) {
             maclux.moveStackToSlot = null;
             return;
         }
