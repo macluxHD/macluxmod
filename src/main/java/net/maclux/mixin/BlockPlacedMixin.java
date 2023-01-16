@@ -49,33 +49,5 @@ public abstract class BlockPlacedMixin {
             return;
 
         maclux.moveStackToSlot = new int[] { itemSlot, currentSlot };
-
-        // PlayerEntity placer = context.getPlayer();
-        // if (placer instanceof PlayerEntity && maclux.restockerEnabled) {
-        // ItemStack stack = context.getStack();
-        // BlockState blockState =
-        // context.getWorld().getBlockState(context.getBlockPos());
-        // PlayerEntity player = (PlayerEntity) placer;
-        // PlayerInventory inv = player.getInventory();
-        // int currentSlot = inv.selectedSlot;
-
-        // if (stack.getCount() == 0) {
-        // int itemSlot = getSlotWithStackAndIgnoreSlot(inv, new
-        // ItemStack(blockState.getBlock().asItem()),
-        // currentSlot);
-
-        // if (itemSlot != -1 && itemSlot != currentSlot) {
-        // MinecraftClient mc = MinecraftClient.getInstance();
-        // ClientPlayerEntity playerClient = mc.player;
-        // ClientPlayerInteractionManager interactionManager = mc.interactionManager;
-
-        // interactionManager.clickSlot(playerClient.playerScreenHandler.syncId,
-        // itemSlot, currentSlot,
-        // SlotActionType.SWAP, playerClient);
-
-        // player.playSound(SoundEvents.ENTITY_ITEM_PICKUP, 1.0F, 1.0F);
-        // }
-        // }
-        // }
     }
 }
