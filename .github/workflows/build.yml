@@ -48,4 +48,4 @@ jobs:
           title: "Latest Build"
           files: |
             build/libs/*.jar
-            !build/libs/*sources*.jar
+            !(build/libs/*sources.jar)
