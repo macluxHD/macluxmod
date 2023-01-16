@@ -50,8 +50,7 @@ public abstract class BlockPlacedMixin {
 
         // LOGGER.info("itemSlot: " + itemSlot);
         if (itemSlot >= -1 && itemSlot <= 8)
-            return;
-
+            itemSlot += 36;
         // Save the slot indexes so that the restocker can move the stack later on
         maclux.moveStackToSlot = new int[] { itemSlot, currentSlot };
     }

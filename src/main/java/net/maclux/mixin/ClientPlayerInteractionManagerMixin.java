@@ -35,7 +35,6 @@ public class ClientPlayerInteractionManagerMixin {
         ClientPlayerInteractionManager interactionManager = mc.interactionManager;
 
         // Move the stack to the slot
-        // TODO: This does not work for slots that are in the hotbar
         interactionManager.clickSlot(playerClient.playerScreenHandler.syncId, maclux.moveStackToSlot[0],
                 maclux.moveStackToSlot[1], SlotActionType.SWAP, playerClient);
         // Play a sound to indicate the restocking
