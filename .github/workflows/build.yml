@@ -39,7 +39,7 @@ jobs:
           name: Artifacts
           path: build/libs/
       - name: Automatic Releases
-        if: ${{ github.ref == 'refs/heads/main' }}
+        if: ${{ github.ref == 'refs/heads/master' }}
         uses: marvinpinto/action-automatic-releases@v1.2.1
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
