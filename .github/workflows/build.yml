@@ -47,5 +47,4 @@ jobs:
           prerelease: true
           title: "Latest Build"
           files: |
-            build/libs/*.jar
-            !(build/libs/*sources.jar)
+            build/libs/maclux-1.0.0.jar
