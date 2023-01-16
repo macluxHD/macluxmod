@@ -1,8 +1,8 @@
 package net.maclux.mixin;
 
 import org.jetbrains.annotations.Nullable;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -37,7 +37,7 @@ public abstract class BlockPlacedMixin {
     @Inject(method = "onPlaced", at = @At("HEAD"))
     private void place(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack,
             CallbackInfo info) {
-        Logger LOGGER = LoggerFactory.getLogger("BlockPlacedMixin");
+        // Logger LOGGER = LoggerFactory.getLogger("BlockPlacedMixin");
 
         if (!(placer instanceof PlayerEntity) || !maclux.restockerEnabled || itemStack.getCount() != 1) {
             maclux.moveStackToSlot = null;
@@ -48,7 +48,7 @@ public abstract class BlockPlacedMixin {
         int currentSlot = inv.selectedSlot;
         int itemSlot = getSlotWithStackAndIgnoreSlot(inv, new ItemStack(itemStack.getItem()), currentSlot);
 
-        LOGGER.info("itemSlot: " + itemSlot);
+        // LOGGER.info("itemSlot: " + itemSlot);
         if (itemSlot >= -1 && itemSlot <= 8)
             return;
 
