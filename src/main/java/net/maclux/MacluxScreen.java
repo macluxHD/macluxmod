@@ -6,13 +6,9 @@ import net.minecraft.client.option.GameOptions;
 import net.minecraft.text.Text;
 
 public class MacluxScreen extends Screen {
-    // private final Screen parent;
-    // private final GameOptions settings;
 
     public MacluxScreen(Screen parent, GameOptions settings) {
         super(Text.translatable("Maclux Settings"));
-        // this.parent = parent;
-        // this.settings = settings;
     }
 
     Text restockerText() {
