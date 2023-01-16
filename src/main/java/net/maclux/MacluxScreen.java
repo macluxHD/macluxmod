@@ -32,7 +32,7 @@ public class MacluxScreen extends Screen {
     }
 
     Text packetReducerText() {
-        if (maclux.packedReducerEnabled) {
+        if (maclux.packetReducerEnabled) {
             return Text.translatable("Packet Reducer Enabled");
         } else {
             return Text.translatable("Packet Reducer Disabled");
@@ -53,7 +53,7 @@ public class MacluxScreen extends Screen {
 
         // packet reducer Button
         this.addDrawableChild(ButtonWidget.builder(packetReducerText(), button -> {
-            maclux.packedReducerEnabled = !maclux.packedReducerEnabled;
+            maclux.packetReducerEnabled = !maclux.packetReducerEnabled;
             button.setMessage(packetReducerText());
         }).dimensions(this.width / 2 - 100, this.height / 6 + 130, 200, 20).build());
     }
