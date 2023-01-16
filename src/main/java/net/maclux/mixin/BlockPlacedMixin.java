@@ -49,6 +49,9 @@ public abstract class BlockPlacedMixin {
         int currentSlot = inv.selectedSlot;
         int itemSlot = getSlotWithStackAndIgnoreSlot(inv, new ItemStack(itemStack.getItem()), currentSlot);
 
+        if (itemSlot == -1)
+            return;
+
         // LOGGER.info("itemSlot: " + itemSlot);
         if (itemSlot >= -1 && itemSlot <= 8)
             itemSlot += 36;
