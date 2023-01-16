@@ -18,9 +18,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+/*
+ * Part of the restocker, this determines which slot the block was placed from and which slot it should be moved to.
+ */
 @Mixin(Block.class)
 public abstract class BlockPlacedMixin {
 
+    // Modified from PlayerInventory.getSlotWithStack allows ignoring a slot
     public int getSlotWithStackAndIgnoreSlot(PlayerInventory inv, ItemStack stack, int slot) {
         for (int i = 0; i < inv.main.size(); ++i) {
             if (inv.main.get(i).isEmpty() || !ItemStack.canCombine(stack, inv.main.get(i)) || i == slot)
@@ -48,6 +52,7 @@ public abstract class BlockPlacedMixin {
         if (itemSlot >= -1 && itemSlot <= 8)
             return;
 
+        // Save the slot indexes so that the restocker can move the stack later on
         maclux.moveStackToSlot = new int[] { itemSlot, currentSlot };
     }
 }

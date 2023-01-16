@@ -11,6 +11,9 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
 import net.minecraft.client.gui.widget.ButtonWidget;
 
+/*
+ * Adds a button to the escape menu that opens the Maclux settings screen.
+ */
 @Mixin(GameMenuScreen.class)
 public class GameMenuScreenMixin extends Screen {
     protected GameMenuScreenMixin(Text text) {

@@ -14,6 +14,10 @@ import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.text.Text;
 
+/*
+ * Prints the name of the packet sent to the server to the chat.
+ * The Packet Reducer only prints if the packet isn't a repeat of the previous packet.
+ */
 @Mixin(ClientPlayNetworkHandler.class)
 public class SendPacketMixin {
 
@@ -27,7 +31,7 @@ public class SendPacketMixin {
             String packetName = packet.getClass().getName();
             packetName = packetName.substring(packetName.lastIndexOf('.') + 1);
 
-            if (!maclux.packedReducerEnabled || !packetName.equals(previousPacketName)) {
+            if (!maclux.packetReducerEnabled || !packetName.equals(previousPacketName)) {
                 previousPacketName = packetName;
 
                 mc.inGameHud.getChatHud()

@@ -17,6 +17,9 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 
+/*
+ * This mixin is used to move the stack to the slot designated previously in the BlockPlacedMixin.
+ */
 @Mixin(ClientPlayerInteractionManager.class)
 public class ClientPlayerInteractionManagerMixin {
     @Inject(method = "interactBlock", at = @At("TAIL"))
@@ -31,8 +34,11 @@ public class ClientPlayerInteractionManagerMixin {
         ClientPlayerEntity playerClient = mc.player;
         ClientPlayerInteractionManager interactionManager = mc.interactionManager;
 
+        // Move the stack to the slot
+        // TODO: This does not work for slots that are in the hotbar
         interactionManager.clickSlot(playerClient.playerScreenHandler.syncId, maclux.moveStackToSlot[0],
                 maclux.moveStackToSlot[1], SlotActionType.SWAP, playerClient);
+        // Play a sound to indicate the restocking
         player.playSound(SoundEvents.ENTITY_ITEM_PICKUP, 1.0F, 1.0F);
         maclux.moveStackToSlot = null;
     }
