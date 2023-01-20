@@ -16,7 +16,7 @@ import net.minecraft.client.util.InputUtil;
 public class KeyboardMixin {
     // TODO: prevent player from stopping when inventory is opened
     @Inject(method = "onKey()V", at = @At(value = "RETURN", ordinal = 3))
-    private void setKeyboardCallbacksReturn(long window, int key, int scancode, int action, int modifiers,
+    private void invWalk(long window, int key, int scancode, int action, int modifiers,
             CallbackInfo ci) {
 
         int[] allowedKeys = { 87, 65, 68, 83, 32 };
