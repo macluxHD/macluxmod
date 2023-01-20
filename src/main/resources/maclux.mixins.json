@@ -2,7 +2,7 @@
 	"required": true,
 	"package": "net.maclux.mixin",
 	"compatibilityLevel": "JAVA_17",
-	"mixins": ["BlockPlacedMixin", "SendPacketMixin", "GameMenuScreenMixin","ClientPlayerInteractionManagerMixin"],
+	"mixins": ["BlockPlacedMixin", "SendPacketMixin", "GameMenuScreenMixin","ClientPlayerInteractionManagerMixin", "KeyboardMixin"],
 	"injectors": {
 		"defaultRequire": 1
 	}

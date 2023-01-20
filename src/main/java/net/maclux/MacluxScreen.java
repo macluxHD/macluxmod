@@ -35,7 +35,20 @@ public class MacluxScreen extends Screen {
         }
     }
 
+    Text invWalkText() {
+        if (maclux.invWalkEnabled) {
+            return Text.translatable("Inventory Walk Enabled");
+        } else {
+            return Text.translatable("Inventory Walk Disabled");
+        }
+    }
+
     protected void init() {
+        // inv Walk Button
+        this.addDrawableChild(ButtonWidget.builder(invWalkText(), button -> {
+            maclux.invWalkEnabled = !maclux.invWalkEnabled;
+            button.setMessage(invWalkText());
+        }).dimensions(this.width / 2 - 100, this.height / 6 + 40, 200, 20).build());
         // restocker Button
         this.addDrawableChild(ButtonWidget.builder(restockerText(), button -> {
             maclux.restockerEnabled = !maclux.restockerEnabled;

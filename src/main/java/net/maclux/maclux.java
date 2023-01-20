@@ -13,6 +13,7 @@ public class maclux implements ModInitializer {
 	public static boolean restockerEnabled = true;
 	public static boolean packetLoggerEnabled = false;
 	public static boolean packetReducerEnabled = false;
+	public static boolean invWalkEnabled = false;
 
 	public static int[] moveStackToSlot = null;
 
